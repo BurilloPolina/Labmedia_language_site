@@ -1,0 +1,138 @@
+@media all and(min-width: 1200px){
+	@column-name-lg: col-lg;
+	@column-count-lg: 12;
+	.generate-column-lg(@i: 1) when (@i =< @column-count-lg) {
+		.@{column-name-lg}-@{i} {
+			width: @i * (100% / @column-count-lg);
+			float: left;
+			min-height: 1px;
+			position: relative;
+			padding: 0px 15px;
+		}
+		.generate-column-lg(@i + 1);
+	}
+	.generate-column-lg();
+}
+
+@media all and(max-width: 991px){
+	
+	@column-name-md: col-md;
+	@column-count-md: 12;
+	.generate-column-md(@i: 1) when (@i =< @column-count-md) {
+		.@{column-name-md}-@{i} {
+			width: @i * (100% / @column-count-md);
+			float: left;
+			min-height: 1px;
+			position: relative;
+			padding: 0px 15px;
+		}
+		.generate-column-md(@i + 1);
+	}
+	.generate-column-md();
+}
+
+@media all and(max-width: 892px){
+	.baner__input-transf{
+		width: 50%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+@media all and(max-width: 767px){
+	.header{
+		//position: fixed;
+		//top: 0px;
+		
+		//width: 100%;
+		//height: 50px;
+		//background-color: #18b5a4;
+		&:before{
+			content: '';
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			width: 100%;
+			height: 100%;
+			background-color: yellow;
+			z-index: 2;
+		}
+		
+		& .row{
+			//position: fixed;
+			background-color: #18b5a4;
+			height: 92px;
+		}
+		&__burger{
+			display: block;
+			width: 30px;
+			height: 20px;
+			position: relative;
+			margin-top: 30px;
+			z-index: 3;
+
+			&:before, &:after {
+				content: '';
+				background: black;
+				position: absolute;
+				width: 100%;
+				height: 2px;
+				right: 0;
+			}
+			&:before {
+				top: 0;
+			}
+			&:after{
+				bottom: 0;
+			}
+			& span{
+				position: absolute;
+				background-color: black;
+				right: 0;
+				width: 100%;
+				height: 2px;
+				top: 9px;
+			}
+		}
+		
+		&__nav{
+			position: relative;
+			z-index: 3;
+			&-item{
+				display: none;
+			}
+		}
+		&__logo{
+			position: relative;
+			z-index: 3;
+		}
+		&__panel{
+			position: relative;
+			z-index: 3;
+		}
+		
+	}
+	.baner{
+		&__input{
+			&-trasf{
+				display: none;
+			}
+		}
+	}
+	
+	@column-name-sm: col-xs;
+	@column-count-sm: 12;
+	.generate-column-sm(@i: 1) when (@i =< @column-count-sm) {
+		.@{column-name-sm}-@{i} {
+			width: @i * (100% / @column-count-sm);
+			float: left;
+			min-height: 1px;
+			position: relative;
+			padding: 0px 15px;
+		}
+		.generate-column-sm(@i + 1);
+	}
+	.generate-column-sm();
+}
+
+
